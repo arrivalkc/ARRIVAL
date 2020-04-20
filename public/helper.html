@@ -1,0 +1,113 @@
+<link href="includes/css/style.css" rel="stylesheet">
+<div id="canvasHolder">
+	<div class="canvas" id="backgroundCanvas" style="width:810px;height:650px;"><canvas width="810px" height="650px"></canvas></div>
+	<div class="canvas" id="charCanvas" style="width:810px;height:650px;"><canvas width="810px" height="650px"></canvas></div>
+	<div class="canvas" id="dialogCanvas" style="width:810px;height:650px;"><canvas width="810px" height="650px"></canvas></div>
+	<div class="canvas" id="hudCanvas" style="width:810px;height:650px;"><canvas width="810px" height="650px"></canvas></div>
+</div>
+<script>
+function initiateCanvas(name)
+{
+	var element = document.getElementById(name),
+		canvas = document.createElement('canvas');
+	canvas.setAttribute('width',element.style.width);
+	canvas.setAttribute('height',element.style.height);
+	element.appendChild(canvas);
+	if(typeof G_vmlCanvasManager!='undefined')
+		canvas = G_vmlCanvasManager.initElement(canvas);
+	return canvas.getContext('2d');
+}
+var canvasClass = function()
+{
+	this.height = 650;
+	this.width = 810;
+};
+var coreCanvas = new canvasClass();
+var curently_playing = true;
+var fps = 30;
+var tpf = 1000/fps;
+window.onfocus = function(){
+	window.location.href = 'index.html';
+};
+</script>
+<script type="text/javascript" src="includes/js/canvas.js"></script>
+<script type="text/javascript" src="includes/js/images.js"></script>
+<script type="text/javascript" src="includes/js/shapes.js"></script>
+<script type="text/javascript" src="includes/js/animation.js"></script>
+<script type="text/javascript" src="includes/js/img_data.js"></script>
+<script>
+var backCanvas = initiateCanvas('backgroundCanvas');
+Background_Display = new Canvas_Handler_Class(backCanvas);
+Background_Display.Set_Background_Color("tourquise");
+//Background_Display.Start();
+
+Background_Display.Add_Image(Images.Retrieve("Fireball"),"fireball",300,200);
+var s = new Rectangle(500,10,100,100);
+s.Color = "#F00";
+s.Fill = false;
+Background_Display.Add_Shape(s);
+Background_Display.Update_Img_Width("fireball",s.Width);
+Background_Display.Update_Img_Height("fireball",s.Height);
+Background_Display.Update_Img_Angle("fireball",0);
+backCanvas.strokeRect(0,0,coreCanvas.width,coreCanvas.height);
+
+
+var value = Math.PI/4;
+var IMG = Images.Retrieve("Fireball");
+function dofunc(i)
+{
+if(i==360)return;
+s.Draw(backCanvas);
+s.Color = "blue";
+//IMG.Draw(backCanvas,s.X,s.Y);
+//IMG.Draw(backCanvas,s.X*Math.cos(value),s.Y*Math.cos(value),s.Width,s.Height);
+backCanvas.save();
+backCanvas.translate(s.X,s.Y);
+backCanvas.rotate(i*0.0174532925);
+s.Draw(backCanvas);
+IMG.Draw(backCanvas,0,0,s.Width,s.Height);
+backCanvas.restore();
+setTimeout(function(){dofunc(i+1)},tpf)
+}
+
+window.onmousedown = function(){
+s.Color = "green";
+s.Y+=90;
+s.Draw(backCanvas);
+dofunc(0);
+
+
+//s.Draw(backCanvas);
+	//console.log(s.X*Math.cos(value),s.Y*Math.cos(value));
+//IMG.Draw(backCanvas,s.X*Math.cos(value),s.Y*Math.cos(value),s.Width,s.Height);
+	//console.log(s.X*Math.sin(value),s.Y*Math.sin(value));
+//IMG.Draw(backCanvas,s.X*Math.sin(value),s.Y*Math.sin(value),s.Width,s.Height);
+
+
+// add x sub y times cos(angle)
+
+
+
+
+
+
+
+
+
+	//if(i==240)return;
+	//console.log("i = "+i);
+	//s.Width = 10+i;
+	//s.Height = 10+i;
+	//backCanvas.rotate(value40);
+	//Background_Display.Update_Img_Width("fireball",s.Width);
+	//Background_Display.Update_Img_Height("fireball",s.Height);
+	//Background_Display.Update_Img_Position("fireball",100+i);
+	//setTimeout(function(){
+	//	animate(i+5);
+	//},tpf);
+};
+
+window.onblur = function(){
+  curently_playing = false;
+};
+</script>

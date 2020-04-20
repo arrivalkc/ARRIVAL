@@ -1,0 +1,11 @@
+iframe#pageFrame{
+    overflow:hidden;
+}
+
+#imageHolder{
+  display: none
+}
+
+#canvasHolder{
+  display: none
+}

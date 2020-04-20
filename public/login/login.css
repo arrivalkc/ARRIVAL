@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/BebasNeue-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/BebasNeue-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/BebasNeue-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/BebasNeue-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/BebasNeue-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+body{
+	background:#DD3F3944;
+	color: #D8D4D5;
+	overflow:hidden;
+	margin: auto;
+	padding: 0px;
+	width: 70%;
+  max-width: 500px;
+  font-family: "Bebas Neue";
+	font-size: 13px;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#bgImage{
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	z-index: -1;
+}
+
+#data_contents{
+	overflow: hidden;
+	height:60%;
+	z-index: 10;
+}
+
+.textInput{
+	background-color: #D8D4D5;
+  font-family: "Bebas Neue";
+	font-size: 20px;
+	border: none;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	color: #DD3F39;
+	border-radius:15px;
+	height: 30px;
+	width: 90%;
+	margin-bottom: 5px;
+	margin-right: 10px;
+	padding-left: 10%;
+}
+
+#sendBtn{
+	font-size: 25px;
+}
+
+.button{
+	background: transparent;
+	color: #D8D4D5;
+	border-style: solid;
+	border-width: medium;
+	text-align: center;
+	font-size: 17px;
+	border-color: #D8D4D5;
+	font-family: "Bebas Neue";
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+}
+
+#stayOnDiv{
+	display: inline;
+	margin: auto;
+}
+
+#seePasswordBtn{
+	display: inline;
+	margin-left: 0px;
+	margin-right: 0px;
+	float: right;
+}
+
+#loginLogo{
+	width: 100%;
+	max-width: 300px;
+	max-height: 250px;
+}
+
+@media (max-width: 450px) {
+  #signupBtn{
+    margin-top: 50px;
+  }
+}
+
+
+#error{
+	display:inline;
+	visibility:hidden;
+	color:#3EDDD0;
+}
+
+#connect{
+	top:40%;
+	left:40%;
+	width:70%;
+}
+
+.checkmarkbox{
+	display: inline-block;
+	background-color: #D8D4D5;
+	cursor: pointer;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	width: 20px;
+	height: 20px;
+	margin-left: 5px
+}
+.checked{
+	background-image: url("check.png");
+	background-size: contain;
+}
+
+.checkLabel{
+	position: relative;
+	top: 4px;
+	cursor: pointer;
+	font-size:20px;
+	padding:5px;
+}

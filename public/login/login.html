@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How did you get here?</title>
+	<link href="login.css" rel="stylesheet">
+</head>
+<body>
+	<center>
+		<img id="bgImage" src="background.jpg"></img>
+	</center>
+	<div id="data_contents">
+		<img id="loginLogo" src="Logo.png"></img>
+		<br />
+		<div id="error">Error <div id="errno"></div></div>
+		<input class="textInput" type="text" id="username" placeholder="EMAIL"></input>
+		<br />
+		<input class="textInput" type="password" id="pass" placeholder="PASSWORD"></input>
+		<br />
+		<div class="button" id="sendBtn" onclick="sendMsgBtn()">LOGIN</div>
+		<div id="stayOnDiv" onclick="toggleMemory();">
+			<div id="staySignedOn" class="checkmarkbox">&nbsp;</div>
+			<label class="checkLabel">REMEMBER ME</label>
+			<div class="button" id="seePasswordBtn" onclick="seePassword()">VIEW PASSWORD</div>
+		</div>
+		<br /><br /><br />
+		<div class="button" id="signupBtn" onclick="openSignup()">CREATE ACCOUNT</div>
+	</div>
+	<script src="login.js"></script>
+</body>
+</html>

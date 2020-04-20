@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<style>
+	body,h1 {font-family: "Raleway", sans-serif}
+	body, html {height: 100%}
+	.bgimg {
+	  background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
+	  min-height: 100%;
+	  background-position: center;
+	  background-size: cover;
+	}
+	</style>
+	<title>How did you get here?</title>
+	<script>
+		// let fileref = document.createElement("link");
+
+		// fileref.setAttribute("rel", "stylesheet");
+		// fileref.setAttribute("type", "text/css");
+		// fileref.setAttribute("href", "css/"+(window.parent.mobilecheck() ? "mobile/" : "" ) + "game.css");
+
+		// document.getElementsByTagName("head")[0].appendChild(fileref);
+	</script>
+	<!-- <link href="css/game.css" rel="stylesheet"> -->
+</head>
+<body>
+
+	<!-- Loading buffer Display -->
+	<div id="overlay">
+		<br /><br /><br />
+		<center>Loading...</center>
+	</div>
+
+	<!-- Website Display -->
+	<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+	  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+	    Logo
+	  </div>
+	  <div class="w3-display-middle">
+	    <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
+	    <hr class="w3-border-grey" style="margin:auto;width:40%">
+	    <p id="connetion-welcome-text" class="w3-large w3-center">Error: Not logged in</p>
+	    <p id="connetion-date-created" class="w3-large w3-center">Error: No activity data</p>
+	    <p id="connetion-date-last-login" class="w3-large w3-center">Error: No activity data</p>
+	    <p class="w3-large w3-center">35 days left</p>
+	  </div>
+	  <div class="w3-display-bottomleft w3-padding-large">
+	    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+	  </div>
+	</div>
+
+	<!-- Canvas Holders for activity and UI -->
+	<div id="imageHolder" style="position:fixed;top:-9999px;left:-9999px;width:2000px;height:2000px;"></div>
+	<div id="canvasHolder">
+		<div class="canvas" id="backgroundCanvas" style="width:810px;height:665px;"></div>
+		<div class="canvas" id="menuCanvas" style="width:810px;height:665px;"></div>
+		<div class="canvas" id="logCanvas" style="width:810px;height:665px;"></div>
+		<div class="canvas" id="inputHandler" style="width:810px;height:665px;"></div>
+	</div>
+
+<!-- Open Source Libraries -->
+<script>'use strict'</script>
+<script src="js/depend/scroll/Animate.js"></script>
+<script src="js/depend/editor/texteditor.js"></script>
+<script src="js/depend/howler/howler.js"></script>
+
+<!-- General Canvas Dependencies -->
+<script src="js/core.js"></script>
+<script src="js/depend/canvas.js"></script>
+<script src="js/depend/shapes.js"></script>
+<script src="js/depend/text.js"></script>
+<script src="js/depend/images.js"></script>
+<script src="js/depend/animation.js"></script>
+<script src="js/depend/sounds.js"></script>
+<script src="js/depend/menu.js"></script>
+</body>
+</html>
